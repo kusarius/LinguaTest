@@ -1,6 +1,6 @@
 ﻿namespace LinguaTest
 {
-    partial class CreateTestWindow
+    partial class CreateOrEditTestWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateTestWindow));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateOrEditTestWindow));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.word = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.translate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,6 +39,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.buttonsToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,6 +105,7 @@
             this.button1.TabIndex = 1;
             this.buttonsToolTip.SetToolTip(this.button1, "Добавить слово");
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -130,6 +132,7 @@
             this.button2.TabIndex = 3;
             this.buttonsToolTip.SetToolTip(this.button2, "Удалить слово");
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -146,12 +149,31 @@
             this.button3.TabIndex = 4;
             this.buttonsToolTip.SetToolTip(this.button3, "Редактировать слово");
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // CreateTestWindow
+            // button4
+            // 
+            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(565, 89);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(21, 21);
+            this.button4.TabIndex = 5;
+            this.buttonsToolTip.SetToolTip(this.button4, "Сохранить тест");
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // CreateOrEditTestWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 385);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
@@ -159,8 +181,9 @@
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(490, 342);
-            this.Name = "CreateTestWindow";
-            this.Text = "Создать тест";
+            this.Name = "CreateOrEditTestWindow";
+            this.Text = "Мастер тестов";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateOrEditTestWindow_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -168,7 +191,6 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn word;
         private System.Windows.Forms.DataGridViewTextBoxColumn translate;
         private System.Windows.Forms.DataGridViewTextBoxColumn chast;
@@ -177,5 +199,7 @@
         private System.Windows.Forms.ToolTip buttonsToolTip;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }

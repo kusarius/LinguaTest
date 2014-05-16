@@ -44,7 +44,15 @@ namespace LinguaTest
 
         private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            foreach (Form i in Application.OpenForms)
+                if (i.Name == "CreateOrEditTestWindow")
+                {
+                    i.Focus();
+                    return;
+                }
 
+            CreateOrEditTestWindow w = new CreateOrEditTestWindow();
+            w.Show();
         }
     }
 }
