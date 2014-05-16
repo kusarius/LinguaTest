@@ -65,7 +65,7 @@
             this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(559, 384);
+            this.dataGridView1.Size = new System.Drawing.Size(560, 385);
             this.dataGridView1.TabIndex = 0;
             // 
             // word
@@ -98,7 +98,7 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(564, 8);
+            this.button1.Location = new System.Drawing.Point(565, 8);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(21, 21);
             this.button1.TabIndex = 1;
@@ -110,9 +110,9 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(558, 0);
+            this.label1.Location = new System.Drawing.Point(559, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1, 383);
+            this.label1.Size = new System.Drawing.Size(1, 384);
             this.label1.TabIndex = 2;
             // 
             // button2
@@ -124,7 +124,7 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(564, 35);
+            this.button2.Location = new System.Drawing.Point(565, 35);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(21, 21);
             this.button2.TabIndex = 3;
@@ -140,7 +140,7 @@
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(215)))), ((int)(((byte)(215)))), ((int)(((byte)(215)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(564, 62);
+            this.button3.Location = new System.Drawing.Point(565, 62);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(21, 21);
             this.button3.TabIndex = 4;
@@ -151,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(591, 384);
+            this.ClientSize = new System.Drawing.Size(592, 385);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
