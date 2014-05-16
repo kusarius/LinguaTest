@@ -62,7 +62,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Word.cs" />
+    <Compile Include="WordObject.cs" />
     <EmbeddedResource Include="CreateTestWindow.resx">
       <DependentUpon>CreateTestWindow.cs</DependentUpon>
     </EmbeddedResource>
