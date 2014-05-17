@@ -52,24 +52,20 @@ namespace LinguaTest
             this.Close();
         }
 
-        private string FormalWord(string w)
-        {
-            w = w.ToLower();
-            return w[0].ToString().ToUpper() + w.Substring(1, w.Length - 1);
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            string sError = "";
+            textBox1.Text = textBox1.Text.Trim();
+            textBox2.Text = textBox2.Text.Trim();
+            if (textBox1.Text == "") sError += "Поле \"Слово\" должно быть заполнено!";
+            if (textBox2.Text == "") sError += Environment.NewLine + "Поле \"Перевод\" должно быть заполнено!";
+            if (comboBox1.SelectedItem == null) sError += Environment.NewLine + "Не указана часть речи!";
+            if (sError != "") MessageBox.Show(sError.Trim(), "LinguaTest", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
             {
-                result = new WordObject(FormalWord(textBox1.Text), FormalWord(textBox2.Text),
+                result = new WordObject(Utils.FormalWord(textBox1.Text.Trim()), Utils.FormalWord(textBox2.Text.Trim()),
                     WordObject.GetPartOfSpeech(comboBox1.SelectedItem.ToString()));
                 this.Close();
-            }
-            catch
-            {
-                MessageBox.Show("Введены некорректные данные или не все поля заполнены!", "Ошибка", MessageBoxButtons.OK,
-                     MessageBoxIcon.Exclamation);
             }
         }
     }
