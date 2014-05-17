@@ -33,7 +33,7 @@ namespace LinguaTest
         private void button1_Click(object sender, EventArgs e)
         {
             WordObject res = AddNewWordWindow.ShowWindowDialog("", "", "", "Добавить слово");
-            if (res.Translate != null)
+            if (res != null && res.Translate != null)
             {
                 dataGridView1.Rows.Add(res.Word, res.Translate, WordObject.GetPartOfSpeechString(res.PartOfSpeech));
                 isSave = false;

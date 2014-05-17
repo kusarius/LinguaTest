@@ -27,15 +27,13 @@ namespace LinguaTest
             InitializeComponent();
 
             // Locate startLabel to the center of the screen
-            startLabel.Location = new Point(this.Width / 2 - startLabel.Width / 2,
-                this.Height / 2 - startLabel.Height / 2 - 20);
+            UpdateStartLabel();
         }
 
         private void MainWindow_Resize(object sender, EventArgs e)
         {
-            if (startLabel.Visible == true) 
-                startLabel.Location = new Point(this.Width / 2 - startLabel.Width / 2,
-                    this.Height / 2 - startLabel.Height / 2 - 20);
+            if (startLabel.Visible == true)
+                UpdateStartLabel();
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -52,7 +50,8 @@ namespace LinguaTest
         private void EnableControls(bool value)
         {
             startLabel.Visible = startLabel.Enabled = !value;
-            dataGridView1.Enabled = dataGridView1.Visible = value;
+            dataGridView1.Enabled = dataGridView1.Visible=
+               label1.Enabled=label1.Visible= value;
             редактироватьToolStripMenuItem.Enabled =
                 пройтиToolStripMenuItem.Enabled =
                 закрытьToolStripMenuItem.Enabled = value;
@@ -84,6 +83,11 @@ namespace LinguaTest
         {
             dataGridView1.Rows.Clear();
             EnableControls(false);
+            UpdateStartLabel();
+        }
+
+        private void UpdateStartLabel()
+        {
             startLabel.Location = new Point(this.Width / 2 - startLabel.Width / 2,
                     this.Height / 2 - startLabel.Height / 2 - 20);
         }
@@ -98,7 +102,18 @@ namespace LinguaTest
 
         private void пройтиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            WordObject[] words = new WordObject[dataGridView1.Rows.Count];
+            for (int i = 0; i < dataGridView1.Rows.Count; ++i)
+            {
+                DataGridViewCellCollection cc = dataGridView1.Rows[i].Cells;
+                words[i] = new WordObject(cc[0].Value as string, cc[1].Value as string,
+                    WordObject.GetPartOfSpeech(cc[2].Value as string));
+            }
+            TakeTestWindow tw = new TakeTestWindow(words);
+            EnableControls(false);
+            startLabel.Text = "Идёт прохождение теста...";
+            UpdateStartLabel();
+            tw.ShowDialog();
         }
     }
 }
