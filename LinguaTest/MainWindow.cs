@@ -114,6 +114,9 @@ namespace LinguaTest
             startLabel.Text = "Идёт прохождение теста...";
             UpdateStartLabel();
             tw.ShowDialog();
+            EnableControls(true);
+            startLabel.Text = "Для начала работы создайте новый тест или откройте существующий...";
+            UpdateStartLabel();
         }
     }
 }
