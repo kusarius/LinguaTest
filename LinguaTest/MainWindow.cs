@@ -45,15 +45,8 @@ namespace LinguaTest
 
         private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach (Form i in Application.OpenForms)
-                if (i.Name == "CreateOrEditTestWindow")
-                {
-                    i.Focus();
-                    return;
-                }
-
             CreateOrEditTestWindow w = new CreateOrEditTestWindow();
-            w.Show();
+            w.ShowDialog();
         }
 
         private void EnableControls(bool value)
@@ -88,6 +81,22 @@ namespace LinguaTest
         }
 
         private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            EnableControls(false);
+            startLabel.Location = new Point(this.Width / 2 - startLabel.Width / 2,
+                    this.Height / 2 - startLabel.Height / 2 - 20);
+        }
+
+        private void редактироватьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateOrEditTestWindow w = new CreateOrEditTestWindow();
+            foreach (DataGridViewRow i in this.dataGridView1.Rows)
+                w.dataGridView1.Rows.Add(i.Cells[0].Value, i.Cells[1].Value, i.Cells[2].Value);
+            w.ShowDialog();
+        }
+
+        private void пройтиToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

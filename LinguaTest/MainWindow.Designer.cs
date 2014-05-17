@@ -40,14 +40,14 @@
             this.оставитьОтзывToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.word = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.translate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chast = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.редактироватьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.пройтиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.word = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.translate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chast = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -161,30 +161,9 @@
             this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(763, 447);
+            this.dataGridView1.Size = new System.Drawing.Size(764, 447);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.Visible = false;
-            // 
-            // word
-            // 
-            this.word.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.word.HeaderText = "Слово";
-            this.word.Name = "word";
-            this.word.ReadOnly = true;
-            // 
-            // translate
-            // 
-            this.translate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.translate.HeaderText = "Перевод";
-            this.translate.Name = "translate";
-            this.translate.ReadOnly = true;
-            // 
-            // chast
-            // 
-            this.chast.FillWeight = 30F;
-            this.chast.HeaderText = "Часть речи";
-            this.chast.Name = "chast";
-            this.chast.ReadOnly = true;
             // 
             // toolStripSeparator1
             // 
@@ -197,6 +176,7 @@
             this.редактироватьToolStripMenuItem.Name = "редактироватьToolStripMenuItem";
             this.редактироватьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.редактироватьToolStripMenuItem.Text = "Редактировать";
+            this.редактироватьToolStripMenuItem.Click += new System.EventHandler(this.редактироватьToolStripMenuItem_Click);
             // 
             // пройтиToolStripMenuItem
             // 
@@ -204,6 +184,7 @@
             this.пройтиToolStripMenuItem.Name = "пройтиToolStripMenuItem";
             this.пройтиToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.пройтиToolStripMenuItem.Text = "Пройти";
+            this.пройтиToolStripMenuItem.Click += new System.EventHandler(this.пройтиToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
@@ -217,6 +198,32 @@
             this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.закрытьToolStripMenuItem.Text = "Закрыть";
             this.закрытьToolStripMenuItem.Click += new System.EventHandler(this.закрытьToolStripMenuItem_Click);
+            // 
+            // word
+            // 
+            this.word.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.word.HeaderText = "Слово";
+            this.word.MinimumWidth = 50;
+            this.word.Name = "word";
+            this.word.ReadOnly = true;
+            // 
+            // translate
+            // 
+            this.translate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.translate.HeaderText = "Перевод";
+            this.translate.MinimumWidth = 60;
+            this.translate.Name = "translate";
+            this.translate.ReadOnly = true;
+            // 
+            // chast
+            // 
+            this.chast.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chast.FillWeight = 30F;
+            this.chast.HeaderText = "Часть речи";
+            this.chast.MinimumWidth = 70;
+            this.chast.Name = "chast";
+            this.chast.ReadOnly = true;
+            this.chast.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // MainWindow
             // 
@@ -246,21 +253,21 @@
         private System.Windows.Forms.ToolStripMenuItem tESTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hELPToolStripMenuItem;
         private System.Windows.Forms.Label startLabel;
-        private System.Windows.Forms.ToolStripMenuItem создатьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem открытьToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеLinguaTestToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оставитьОтзывToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem пройтиToolStripMenuItem;
         public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripMenuItem закрытьToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem создатьToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn word;
         private System.Windows.Forms.DataGridViewTextBoxColumn translate;
         private System.Windows.Forms.DataGridViewTextBoxColumn chast;
-        private System.Windows.Forms.ToolStripMenuItem закрытьToolStripMenuItem;
     }
 }
 

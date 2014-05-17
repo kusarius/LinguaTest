@@ -31,9 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateOrEditTestWindow));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.word = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.translate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.chast = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -41,6 +38,10 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.word = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.translate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chast = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,29 +68,8 @@
             this.dataGridView1.ShowCellToolTips = false;
             this.dataGridView1.ShowEditingIcon = false;
             this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(560, 385);
+            this.dataGridView1.Size = new System.Drawing.Size(560, 386);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // word
-            // 
-            this.word.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.word.HeaderText = "Слово";
-            this.word.Name = "word";
-            this.word.ReadOnly = true;
-            // 
-            // translate
-            // 
-            this.translate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.translate.HeaderText = "Перевод";
-            this.translate.Name = "translate";
-            this.translate.ReadOnly = true;
-            // 
-            // chast
-            // 
-            this.chast.FillWeight = 30F;
-            this.chast.HeaderText = "Часть речи";
-            this.chast.Name = "chast";
-            this.chast.ReadOnly = true;
             // 
             // button1
             // 
@@ -115,7 +95,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Location = new System.Drawing.Point(559, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1, 384);
+            this.label1.Size = new System.Drawing.Size(1, 385);
             this.label1.TabIndex = 2;
             // 
             // button2
@@ -171,7 +151,7 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label2.Location = new System.Drawing.Point(560, 0);
@@ -179,16 +159,55 @@
             this.label2.Size = new System.Drawing.Size(32, 1);
             this.label2.TabIndex = 6;
             // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.label3.Location = new System.Drawing.Point(591, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(1, 385);
+            this.label3.TabIndex = 7;
+            // 
+            // word
+            // 
+            this.word.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.word.FillWeight = 68.29949F;
+            this.word.HeaderText = "Слово";
+            this.word.MinimumWidth = 50;
+            this.word.Name = "word";
+            this.word.ReadOnly = true;
+            // 
+            // translate
+            // 
+            this.translate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.translate.FillWeight = 68.29949F;
+            this.translate.HeaderText = "Перевод";
+            this.translate.MinimumWidth = 60;
+            this.translate.Name = "translate";
+            this.translate.ReadOnly = true;
+            // 
+            // chast
+            // 
+            this.chast.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.chast.FillWeight = 30F;
+            this.chast.HeaderText = "Часть речи";
+            this.chast.MinimumWidth = 70;
+            this.chast.Name = "chast";
+            this.chast.ReadOnly = true;
+            this.chast.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // CreateOrEditTestWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(592, 385);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -196,6 +215,7 @@
             this.Name = "CreateOrEditTestWindow";
             this.Text = "Мастер тестов";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CreateOrEditTestWindow_FormClosing);
+            this.Shown += new System.EventHandler(this.CreateOrEditTestWindow_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -203,9 +223,6 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridViewTextBoxColumn word;
-        private System.Windows.Forms.DataGridViewTextBoxColumn translate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn chast;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolTip buttonsToolTip;
@@ -214,5 +231,9 @@
         private System.Windows.Forms.Button button4;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn word;
+        private System.Windows.Forms.DataGridViewTextBoxColumn translate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn chast;
     }
 }

@@ -96,5 +96,11 @@ namespace LinguaTest
             if (dr == System.Windows.Forms.DialogResult.Yes) 
                 button4_Click(null,null);
         }
+
+        private void CreateOrEditTestWindow_Shown(object sender, EventArgs e)
+        {
+            label1.Width = label3.Width = 1;
+            label2.Height = 1;
+        }
     }
 }
