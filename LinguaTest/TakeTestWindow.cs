@@ -17,6 +17,7 @@ namespace LinguaTest
         private int rightAns = 0;
         private string[] answers, _answers;
         private bool isDone = false;
+        private int tipIndex = 0;
 
         public TakeTestWindow(WordObject[] qs)
         {
@@ -35,6 +36,10 @@ namespace LinguaTest
             qLabel.Text = ((rnd.Next(0, 2) == 0) ? questions[qNumber - 1].Word
                 : questions[qNumber - 1].Translate) + ":";
             textBox1.Clear();
+            string ans = "";
+            if (qLabel.Text == questions[qNumber - 1].Word +":") ans = questions[qNumber - 1].Translate.ToLower();
+            else ans = questions[qNumber - 1].Word.ToLower();
+            _answers[qNumber - 1] = ans;
         }
 
         private void TakeTestWindow_FormClosing(object sender, FormClosingEventArgs e)
@@ -52,20 +57,20 @@ namespace LinguaTest
             this.Close();
         }
 
+        private void ShowResults()
+        {
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            string ans = "";
-            if (qLabel.Text == questions[qNumber - 1].Word + ":") ans = questions[qNumber - 1].Translate.ToLower();
-            else ans = questions[qNumber - 1].Word.ToLower();
-            _answers[qNumber - 1] = ans;
-
             string answ = textBox1.Text.Trim().ToLower();
             answers[qNumber - 1] = answ;
-            if (answ == ans) rightAns++;
+            if (answ == _answers[qNumber-1]) rightAns++;
 
             if (qNumber == questions.Length)
             {
                 isDone = true;
+                ShowResults();
                 this.Close();
             }
             else UpdateQuestion();
@@ -73,12 +78,20 @@ namespace LinguaTest
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string ans = "";
-            if (qLabel.Text == questions[qNumber - 1].Word) ans = questions[qNumber - 1].Translate.ToLower();
-            else ans = questions[qNumber - 1].Word.ToLower();
-            _answers[qNumber - 1] = ans;
             answers[qNumber - 1] = "Don't fucking know...";
-            UpdateQuestion();
+            if (qNumber == questions.Length)
+            {
+                isDone = true;
+                ShowResults();
+                this.Close();
+            }
+            else UpdateQuestion();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = _answers[qNumber - 1].Substring(0, ++tipIndex);
+            if (tipIndex > _answers[qNumber - 1].Length- 1) tipIndex = 0;
         }
     }
 }

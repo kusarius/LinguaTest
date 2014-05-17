@@ -90,7 +90,7 @@ namespace LinguaTest
 
         private void CreateOrEditTestWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (isSave) return;
+            if (isSave || dataGridView1.Rows.Count == 0) return;
             DialogResult dr = MessageBox.Show("Сохранить изменения в тесте?", "LinguaTest", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
             if (dr == System.Windows.Forms.DialogResult.Yes) 
