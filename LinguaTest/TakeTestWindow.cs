@@ -59,6 +59,7 @@ namespace LinguaTest
 
         private void ShowResults()
         {
+            ResultForm f = new ResultForm(_answers, answers);
         }
 
         private void button1_Click(object sender, EventArgs e)

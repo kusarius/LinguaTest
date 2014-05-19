@@ -119,11 +119,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cross.png" />
     <Content Include="edit.png" />
     <Content Include="icon.ico" />
     <Content Include="minus.png" />
     <Content Include="plus.png" />
     <Content Include="save.png" />
+    <Content Include="tick.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
