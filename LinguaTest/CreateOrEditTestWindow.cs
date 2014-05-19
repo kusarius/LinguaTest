@@ -22,7 +22,7 @@ namespace LinguaTest
 {
     public partial class CreateOrEditTestWindow : Form
     {
-        private bool isSave = true;
+        public bool isSave = true;
 
         public CreateOrEditTestWindow()
         {
@@ -32,12 +32,9 @@ namespace LinguaTest
         // Add word button
         private void button1_Click(object sender, EventArgs e)
         {
-            WordObject res = AddNewWordWindow.ShowWindowDialog("", "", "", "Добавить слово");
-            if (res != null && res.Translate != null)
-            {
-                dataGridView1.Rows.Add(res.Word, res.Translate, WordObject.GetPartOfSpeechString(res.PartOfSpeech));
-                isSave = false;
-            }
+            AddNewWordWindow wnd = new AddNewWordWindow(this);
+            wnd.Text = "Добавить слово";
+            wnd.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -55,8 +52,8 @@ namespace LinguaTest
             {
                 DataGridViewRow r = dataGridView1.SelectedRows[0];
                 WordObject res = AddNewWordWindow.ShowWindowDialog(r.Cells[0].Value.ToString(),
-                    r.Cells[1].Value.ToString(), r.Cells[2].Value.ToString(), "Редактировать слово");
-                if (res.Translate != null)
+                    r.Cells[1].Value.ToString(), r.Cells[2].Value.ToString(), "Редактировать слово", this);
+                if (res != null && res.Translate != null)
                 {
                     dataGridView1.SelectedRows[0].Cells[0].Value = res.Word;
                     dataGridView1.SelectedRows[0].Cells[1].Value = res.Translate;
@@ -93,8 +90,11 @@ namespace LinguaTest
             if (isSave || dataGridView1.Rows.Count == 0) return;
             DialogResult dr = MessageBox.Show("Сохранить изменения в тесте?", "LinguaTest", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
-            if (dr == System.Windows.Forms.DialogResult.Yes) 
-                button4_Click(null,null);
+            if (dr == System.Windows.Forms.DialogResult.Yes)
+            {
+                button4_Click(null, null);
+                e.Cancel = true;
+            }
         }
 
         private void CreateOrEditTestWindow_Shown(object sender, EventArgs e)
