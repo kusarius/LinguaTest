@@ -118,5 +118,14 @@ namespace LinguaTest
             startLabel.Text = "Для начала работы создайте новый тест или откройте существующий...";
             UpdateStartLabel();
         }
+
+        private void оПрограммеLinguaTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("LinguaTest 1.1, 25.06.2014\nАвтор: Рагулин Александр (kusarius)\n" + 
+                "Баг-репорты, замечания и предложения отправляйте на e-mail:\n" +
+                "     kusarius@gmail.com\n     ragulin.alexander@gmail.com",
+                "О программе LinguaTest", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
     }
 }

@@ -42,7 +42,6 @@
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hELPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеLinguaTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оставитьОтзывToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startLabel = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.word = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -145,8 +144,7 @@
             // hELPToolStripMenuItem
             // 
             this.hELPToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.оПрограммеLinguaTestToolStripMenuItem,
-            this.оставитьОтзывToolStripMenuItem});
+            this.оПрограммеLinguaTestToolStripMenuItem});
             this.hELPToolStripMenuItem.Name = "hELPToolStripMenuItem";
             this.hELPToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.hELPToolStripMenuItem.Text = "СПРАВКА";
@@ -156,12 +154,7 @@
             this.оПрограммеLinguaTestToolStripMenuItem.Name = "оПрограммеLinguaTestToolStripMenuItem";
             this.оПрограммеLinguaTestToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
             this.оПрограммеLinguaTestToolStripMenuItem.Text = "О программе LinguaTest";
-            // 
-            // оставитьОтзывToolStripMenuItem
-            // 
-            this.оставитьОтзывToolStripMenuItem.Name = "оставитьОтзывToolStripMenuItem";
-            this.оставитьОтзывToolStripMenuItem.Size = new System.Drawing.Size(210, 22);
-            this.оставитьОтзывToolStripMenuItem.Text = "Оставить отзыв";
+            this.оПрограммеLinguaTestToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеLinguaTestToolStripMenuItem_Click);
             // 
             // startLabel
             // 
@@ -275,7 +268,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеLinguaTestToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem оставитьОтзывToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem пройтиToolStripMenuItem;
