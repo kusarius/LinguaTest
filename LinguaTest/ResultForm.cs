@@ -35,9 +35,9 @@ namespace LinguaTest
             }
 
             double percent = ((double)rightAns / (double)answers.Count) * 100.0;
-            resLabel.Text = string.Format("Вы правильно ответили на {0} ({1:N2}%). Уровень подготовки - {2}.",
+            resLabel.Text = string.Format("Вы правильно ответили на {0} из {1} ({2:N2}%). Уровень подготовки - {3}.",
                 rightAns.ToString() + " " + get_correct_str(rightAns, "вопрос", "вопроса", "вопросов"),
-                percent, GetLevelFromPercent(percent));
+                answers.Count + get_correct_str(answers.Count, "-го", "-х", "-ти"), percent, GetLevelFromPercent(percent));
             UpdateResLabel();
         }
 
