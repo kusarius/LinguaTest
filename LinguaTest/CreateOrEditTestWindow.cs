@@ -88,13 +88,10 @@ namespace LinguaTest
         private void CreateOrEditTestWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (isSave || dataGridView1.Rows.Count == 0) return;
-            DialogResult dr = MessageBox.Show("Сохранить изменения в тесте?", "LinguaTest", MessageBoxButtons.YesNo,
+            DialogResult dr = MessageBox.Show("Сохранить изменения в тесте?", "LinguaTest", MessageBoxButtons.YesNoCancel,
                 MessageBoxIcon.Question);
-            if (dr == System.Windows.Forms.DialogResult.Yes)
-            {
-                button4_Click(null, null);
-                e.Cancel = true;
-            }
+            if (dr == System.Windows.Forms.DialogResult.Cancel) e.Cancel = true;
+            if (dr == System.Windows.Forms.DialogResult.Yes) button4_Click(null, null);
         }
 
         private void CreateOrEditTestWindow_Shown(object sender, EventArgs e)

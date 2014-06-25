@@ -12,12 +12,12 @@ namespace LinguaTest
     public partial class TakeTestWindow : Form
     {
         private WordObject[] questions;
-        private int qNumber = 0;
+        private int qNumber = 0; // Current question number
         private Random rnd = new Random();
-        private int rightAns = 0;
-        private string[] answers, _answers;
-        private bool isDone = false;
-        private int tipIndex = 0;
+        private int rightAns = 0; // Right answers count
+        private string[] answers, 
+                        _answers;
+        private bool isDone = false; // Is the test done
 
         public TakeTestWindow(WordObject[] qs)
         {
@@ -50,7 +50,7 @@ namespace LinguaTest
                     MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                 if (dr == System.Windows.Forms.DialogResult.No) e.Cancel = true;
             }
-        }
+        } 
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -91,8 +91,7 @@ namespace LinguaTest
 
         private void button3_Click(object sender, EventArgs e)
         {
-            textBox1.Text = _answers[qNumber - 1].Substring(0, ++tipIndex);
-            if (tipIndex > _answers[qNumber - 1].Length- 1) tipIndex = 0;
+            textBox1.Text += _answers[qNumber - 1].Substring(_answers[qNumber].Length, 1);
         }
     }
 }
