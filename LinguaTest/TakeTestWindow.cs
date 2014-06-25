@@ -11,13 +11,13 @@ namespace LinguaTest
 {
     public partial class TakeTestWindow : Form
     {
-        private WordObject[] questions;
-        private int qNumber = 0; // Current question number
-        private Random rnd = new Random();
-        private int rightAns = 0; // Right answers count
-        private string[] answers, 
-                        _answers;
-        private bool isDone = false; // Is the test done
+        WordObject[] questions; // Test questions
+        List<UserAnswer> answers = new List<UserAnswer>();
+        UserAnswer currentAnswer = new UserAnswer();
+        int questionNumber = 0; // Current question number
+        Random rnd = new Random();
+        int tipIndex = 1;
+        bool isDone = false; // Is test completed
 
         public TakeTestWindow(WordObject[] qs)
         {
@@ -25,21 +25,38 @@ namespace LinguaTest
 
             this.MaximumSize = new Size(Screen.PrimaryScreen.Bounds.Width, this.Height);
             questions = Utils.Shuffle<WordObject>(qs);
-            answers = _answers = new string[questions.Length];
 
             UpdateQuestion();
         }
 
         private void UpdateQuestion()
         {
-            qNumberLabel.Text = "Вопрос " + ++qNumber + " из " + questions.Length;
-            qLabel.Text = ((rnd.Next(0, 2) == 0) ? questions[qNumber - 1].Word
-                : questions[qNumber - 1].Translate) + ":";
+            if (questionNumber + 1 == questions.Length)
+            {
+                isDone = true;
+                ShowResults();
+                this.Close();
+            }
+
             textBox1.Clear();
-            string ans = "";
-            if (qLabel.Text == questions[qNumber - 1].Word +":") ans = questions[qNumber - 1].Translate.ToLower();
-            else ans = questions[qNumber - 1].Word.ToLower();
-            _answers[qNumber - 1] = ans;
+            string question = "", rightAnswer = "";
+            if (rnd.Next(0, 2) == 0)
+            {
+                question = questions[questionNumber].Word;
+                rightAnswer = questions[questionNumber].Translate;
+            }
+            else
+            {
+                question = questions[questionNumber].Translate;
+                rightAnswer = questions[questionNumber].Word;
+            }
+
+            qLabel.Text = question;
+            qNumberLabel.Text = "Вопрос " + (questionNumber + 1) + " из " + questions.Length + ".";
+
+            currentAnswer.Question = question;
+            currentAnswer.RightAnswer = rightAnswer;
+            questionNumber++;
         }
 
         private void TakeTestWindow_FormClosing(object sender, FormClosingEventArgs e)
@@ -59,39 +76,35 @@ namespace LinguaTest
 
         private void ShowResults()
         {
-            ResultForm f = new ResultForm(_answers, answers);
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string answ = textBox1.Text.Trim().ToLower();
-            answers[qNumber - 1] = answ;
-            if (answ == _answers[qNumber-1]) rightAns++;
-
-            if (qNumber == questions.Length)
+            string ans = textBox1.Text.Trim();
+            if (ans == "")
             {
-                isDone = true;
-                ShowResults();
-                this.Close();
+                MessageBox.Show("Поле ответа не должно быть пустым!", "LinguaTest",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
-            else UpdateQuestion();
+
+            currentAnswer.Answer = ans;
+            answers.Add(currentAnswer);
+
+            UpdateQuestion();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            answers[qNumber - 1] = "Don't fucking know...";
-            if (qNumber == questions.Length)
-            {
-                isDone = true;
-                ShowResults();
-                this.Close();
-            }
-            else UpdateQuestion();
+            currentAnswer = UserAnswer.DontKnow;
+            answers.Add(currentAnswer);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            textBox1.Text += _answers[qNumber - 1].Substring(_answers[qNumber].Length, 1);
+            textBox1.Text = currentAnswer.RightAnswer.Substring(0, tipIndex++);
+            if (tipIndex > currentAnswer.RightAnswer.Length) tipIndex = 1;
         }
     }
 }

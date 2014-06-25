@@ -33,6 +33,7 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rightAns = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -51,9 +52,11 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
+            this.rightAns,
             this.Column3});
             this.dataGridView1.Location = new System.Drawing.Point(0, 36);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(605, 397);
             this.dataGridView1.TabIndex = 0;
@@ -76,18 +79,28 @@
             // Column2
             // 
             this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.HeaderText = "Ответ";
+            this.Column2.HeaderText = "Ваш ответ";
             this.Column2.MinimumWidth = 50;
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
+            // rightAns
+            // 
+            this.rightAns.HeaderText = "Правильный ответ";
+            this.rightAns.MinimumWidth = 130;
+            this.rightAns.Name = "rightAns";
+            this.rightAns.ReadOnly = true;
+            this.rightAns.Width = 130;
+            // 
             // Column3
             // 
             this.Column3.FillWeight = 10F;
-            this.Column3.HeaderText = "Правильно";
-            this.Column3.MinimumWidth = 70;
+            this.Column3.HeaderText = "      ";
+            this.Column3.MinimumWidth = 40;
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column3.Width = 40;
             // 
             // ResultForm
             // 
@@ -111,6 +124,7 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rightAns;
         private System.Windows.Forms.DataGridViewImageColumn Column3;
     }
 }

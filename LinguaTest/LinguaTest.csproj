@@ -82,6 +82,7 @@
     <Compile Include="TakeTestWindow.Designer.cs">
       <DependentUpon>TakeTestWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserAnswer.cs" />
     <Compile Include="Utils.cs" />
     <Compile Include="WordObject.cs" />
     <EmbeddedResource Include="AddNewWordWindow.resx">
