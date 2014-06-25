@@ -31,32 +31,36 @@ namespace LinguaTest
 
         private void UpdateQuestion()
         {
-            if (questionNumber + 1 == questions.Length)
+            if (questionNumber == questions.Length)
             {
                 isDone = true;
-                ShowResults();
                 this.Close();
-            }
-
-            textBox1.Clear();
-            string question = "", rightAnswer = "";
-            if (rnd.Next(0, 2) == 0)
-            {
-                question = questions[questionNumber].Word;
-                rightAnswer = questions[questionNumber].Translate;
+                ShowResults();
             }
             else
             {
-                question = questions[questionNumber].Translate;
-                rightAnswer = questions[questionNumber].Word;
+                currentAnswer = new UserAnswer();
+                textBox1.Clear();
+                string question = "", rightAnswer = "";
+                if (rnd.Next(0, 2) == 0)
+                {
+                    question = questions[questionNumber].Word;
+                    rightAnswer = questions[questionNumber].Translate;
+                }
+                else
+                {
+                    question = questions[questionNumber].Translate;
+                    rightAnswer = questions[questionNumber].Word;
+                }
+
+                qLabel.Text = question;
+                qNumberLabel.Text = "Вопрос " + (questionNumber + 1) + " из " + questions.Length + ".";
+
+                currentAnswer.Question = question;
+                currentAnswer.RightAnswer = rightAnswer;
+
+                questionNumber++;
             }
-
-            qLabel.Text = question;
-            qNumberLabel.Text = "Вопрос " + (questionNumber + 1) + " из " + questions.Length + ".";
-
-            currentAnswer.Question = question;
-            currentAnswer.RightAnswer = rightAnswer;
-            questionNumber++;
         }
 
         private void TakeTestWindow_FormClosing(object sender, FormClosingEventArgs e)
@@ -76,7 +80,8 @@ namespace LinguaTest
 
         private void ShowResults()
         {
-            
+            ResultForm resForm = new ResultForm(answers);
+            resForm.ShowDialog();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -89,7 +94,7 @@ namespace LinguaTest
                 return;
             }
 
-            currentAnswer.Answer = ans;
+            currentAnswer.Answer = Utils.FormalWord(ans);
             answers.Add(currentAnswer);
 
             UpdateQuestion();
@@ -97,8 +102,9 @@ namespace LinguaTest
 
         private void button2_Click(object sender, EventArgs e)
         {
-            currentAnswer = UserAnswer.DontKnow;
+            currentAnswer.Answer = null;
             answers.Add(currentAnswer);
+            UpdateQuestion();
         }
 
         private void button3_Click(object sender, EventArgs e)

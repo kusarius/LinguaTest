@@ -60,7 +60,9 @@
     <Compile Include="CreateOrEditTestWindow.Designer.cs">
       <DependentUpon>CreateOrEditTestWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="DataGridViewRichTextBoxColumn.cs" />
+    <Compile Include="DataGridViewRichTextBoxColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +104,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ResultForm.resx">
       <DependentUpon>ResultForm.cs</DependentUpon>

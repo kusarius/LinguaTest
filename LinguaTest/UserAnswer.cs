@@ -7,13 +7,11 @@ using System.Windows.Forms;
 
 namespace LinguaTest
 {
-    class UserAnswer
+    public class UserAnswer
     {
         public string Question { get; set; }
         public string Answer { get; set; } // User's answer
         public string RightAnswer { get; set; }
-
-        public static readonly UserAnswer DontKnow = new UserAnswer(null, null, null);
 
         public bool IsCorrect
         {
@@ -40,15 +38,25 @@ namespace LinguaTest
         {
             RichTextBox rtb = new RichTextBox();
             rtb.Text = Answer;
+            rtb.Font = new Font("Segoe UI", 10);
 
             if (IsCorrect)
+            {
+                rtb.Select(0, Answer.Length);
+                rtb.SelectionColor = Color.Green;
+                rtb.SelectionAlignment = HorizontalAlignment.Center;
+                rtb.DeselectAll();
                 return rtb.Rtf;
+            }
 
+            rtb.Text += " " + RightAnswer;
             rtb.Select(0, Answer.Length);
             rtb.SelectionFont = new Font(rtb.SelectionFont, FontStyle.Strikeout);
-            rtb.Text += " " + RightAnswer;
             rtb.Select(Answer.Length + 1, RightAnswer.Length);
             rtb.SelectionColor = Color.Green;
+            rtb.SelectAll();
+            rtb.SelectionAlignment = HorizontalAlignment.Center;
+            rtb.DeselectAll();
 
             return rtb.Rtf;
         }
