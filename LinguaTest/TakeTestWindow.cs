@@ -93,7 +93,7 @@ namespace LinguaTest
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+            
             currentAnswer.Answer = Utils.FormalWord(ans);
             answers.Add(currentAnswer);
 

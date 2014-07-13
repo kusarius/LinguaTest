@@ -43,13 +43,13 @@
             this.hELPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеLinguaTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startLabel = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.wordsTable = new System.Windows.Forms.DataGridView();
             this.word = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.translate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.chast = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wordsTable)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -166,36 +166,37 @@
             this.startLabel.TabIndex = 1;
             this.startLabel.Text = "Для начала работы создайте новый тест или откройте существующий...";
             // 
-            // dataGridView1
+            // wordsTable
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.wordsTable.AllowUserToAddRows = false;
+            this.wordsTable.AllowUserToDeleteRows = false;
+            this.wordsTable.AllowUserToResizeRows = false;
+            this.wordsTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeight = 20;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.wordsTable.BackgroundColor = System.Drawing.Color.White;
+            this.wordsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.wordsTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.wordsTable.ColumnHeadersHeight = 20;
+            this.wordsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.wordsTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.word,
             this.translate,
             this.chast});
-            this.dataGridView1.Enabled = false;
-            this.dataGridView1.Location = new System.Drawing.Point(-1, 25);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.ShowCellErrors = false;
-            this.dataGridView1.ShowCellToolTips = false;
-            this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(631, 391);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.Visible = false;
+            this.wordsTable.Enabled = false;
+            this.wordsTable.Location = new System.Drawing.Point(-1, 25);
+            this.wordsTable.MultiSelect = false;
+            this.wordsTable.Name = "wordsTable";
+            this.wordsTable.RowHeadersVisible = false;
+            this.wordsTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.wordsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.wordsTable.ShowCellErrors = false;
+            this.wordsTable.ShowCellToolTips = false;
+            this.wordsTable.ShowEditingIcon = false;
+            this.wordsTable.ShowRowErrors = false;
+            this.wordsTable.Size = new System.Drawing.Size(631, 391);
+            this.wordsTable.TabIndex = 2;
+            this.wordsTable.Visible = false;
             // 
             // word
             // 
@@ -241,7 +242,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(629, 417);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.wordsTable);
             this.Controls.Add(this.startLabel);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -252,7 +253,7 @@
             this.Resize += new System.EventHandler(this.MainWindow_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wordsTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,7 +272,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem пройтиToolStripMenuItem;
-        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView wordsTable;
         private System.Windows.Forms.ToolStripMenuItem закрытьToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem создатьToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem редактироватьToolStripMenuItem;

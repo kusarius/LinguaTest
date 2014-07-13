@@ -50,7 +50,7 @@ namespace LinguaTest
         private void EnableControls(bool value)
         {
             startLabel.Visible = startLabel.Enabled = !value;
-            dataGridView1.Enabled = dataGridView1.Visible=
+            wordsTable.Enabled = wordsTable.Visible=
                label1.Enabled=label1.Visible= value;
             редактироватьToolStripMenuItem.Enabled =
                 пройтиToolStripMenuItem.Enabled =
@@ -65,23 +65,29 @@ namespace LinguaTest
             if (d.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 string fStr = File.ReadAllText(d.FileName, Encoding.Default);
-                string[] sWords = fStr.Trim().Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+                string[] sWords = fStr.Trim().Split(new string[] { Environment.NewLine, "\r", "\n" }, StringSplitOptions.None);
                 WordObject[] words = new WordObject[sWords.Length];
-                dataGridView1.Rows.Clear();
+                wordsTable.Rows.Clear();
                 for (int i = 0; i < sWords.Length; ++i)
                 {
                     string[] parts = sWords[i].Split(new string[] { ":::" }, StringSplitOptions.None);
                     words[i] = new WordObject(parts[0], parts[1], WordObject.GetPartOfSpeech(parts[2]));
-                    dataGridView1.Rows.Add(words[i].Word, words[i].Translate,
+                    wordsTable.Rows.Add(words[i].Word, words[i].Translate,
                         WordObject.GetPartOfSpeechString(words[i].PartOfSpeech));
                 }
                 EnableControls(true);
+
+                /* При прокрутке элементов таблицы стрелкой вниз 
+                проявляется баг в контроле DataGridView. Единственный известный мне 
+                фикс - изменение размера таблицы. */
+                wordsTable.Width++;
+                wordsTable.Width--;
             }
         }
 
         private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
+            wordsTable.Rows.Clear();
             EnableControls(false);
             UpdateStartLabel();
         }
@@ -95,17 +101,17 @@ namespace LinguaTest
         private void редактироватьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateOrEditTestWindow w = new CreateOrEditTestWindow();
-            foreach (DataGridViewRow i in this.dataGridView1.Rows)
+            foreach (DataGridViewRow i in this.wordsTable.Rows)
                 w.dataGridView1.Rows.Add(i.Cells[0].Value, i.Cells[1].Value, i.Cells[2].Value);
             w.ShowDialog();
         }
 
         private void пройтиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WordObject[] words = new WordObject[dataGridView1.Rows.Count];
-            for (int i = 0; i < dataGridView1.Rows.Count; ++i)
+            WordObject[] words = new WordObject[wordsTable.Rows.Count];
+            for (int i = 0; i < wordsTable.Rows.Count; ++i)
             {
-                DataGridViewCellCollection cc = dataGridView1.Rows[i].Cells;
+                DataGridViewCellCollection cc = wordsTable.Rows[i].Cells;
                 words[i] = new WordObject(cc[0].Value as string, cc[1].Value as string,
                     WordObject.GetPartOfSpeech(cc[2].Value as string));
             }
