@@ -5,43 +5,29 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace LinguaTest
-{
-    public class UserAnswer
-    {
+namespace LinguaTest {
+    public class UserAnswer {
         public string Question { get; set; }
         public string Answer { get; set; } // User's answer
         public string RightAnswer { get; set; }
 
-        public bool IsCorrect
-        {
+        public bool IsCorrect {
             get { return Answer == RightAnswer; }
         }
 
-        public UserAnswer(string qs, string a, string ra)
-        {
+        public UserAnswer(string qs, string a, string ra) {
             Question = qs;
             Answer = a;
             RightAnswer = ra;
         }
         public UserAnswer() { }
 
-        private string RepeatString(string str, int times)
-        {
-            string res = "";
-            for (int i = 0; i < times; i++)
-                res += str;
-            return res;
-        }
-
-        public string FormattedAnswer()
-        {
+        public string FormattedAnswer() {
             RichTextBox rtb = new RichTextBox();
             rtb.Text = Answer;
             rtb.Font = new Font("Segoe UI", 10);
 
-            if (IsCorrect)
-            {
+            if (IsCorrect) {
                 rtb.Select(0, Answer.Length);
                 rtb.SelectionColor = Color.Green;
                 rtb.SelectionAlignment = HorizontalAlignment.Center;

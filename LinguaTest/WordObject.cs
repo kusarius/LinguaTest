@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace LinguaTest
-{
-    public class WordObject
-    {
-        public enum PartOfSpeechKind
-        {
+namespace LinguaTest {
+    public class WordObject {
+        public enum PartOfSpeechKind {
             Noun, Verb, Adjective,
             Article, Pronoun, Numeral,
             Adverb, Preposition,
@@ -20,21 +17,18 @@ namespace LinguaTest
         public string Translate { get; set; }
         public PartOfSpeechKind PartOfSpeech { get; set; }
 
-        public WordObject(string w, string t, PartOfSpeechKind pof)
-        {
+        public WordObject(string w, string t, PartOfSpeechKind pof) {
             Word = w;
             Translate = t;
             PartOfSpeech = pof;
         }
         public WordObject() { }
 
-        public static PartOfSpeechKind GetPartOfSpeech(string str)
-        {
-            switch (str)
-            {
-                case "Существительное": 
+        public static PartOfSpeechKind GetPartOfSpeech(string str) {
+            switch (str) {
+                case "Существительное":
                 case "Noun": return WordObject.PartOfSpeechKind.Noun;
-                case "Прилагательное": 
+                case "Прилагательное":
                 case "Adjective": return WordObject.PartOfSpeechKind.Adjective;
                 case "Глагол":
                 case "Verb": return WordObject.PartOfSpeechKind.Verb;
@@ -42,13 +36,13 @@ namespace LinguaTest
                 case "Article": return WordObject.PartOfSpeechKind.Article;
                 case "Местоимение":
                 case "Pronoun": return WordObject.PartOfSpeechKind.Pronoun;
-                case "Числительное": 
+                case "Числительное":
                 case "Numeral": return WordObject.PartOfSpeechKind.Numeral;
                 case "Наречие":
                 case "Adverb": return WordObject.PartOfSpeechKind.Adverb;
                 case "Предлог":
                 case "Preposition": return WordObject.PartOfSpeechKind.Preposition;
-                case "Союз": 
+                case "Союз":
                 case "Conjunction": return WordObject.PartOfSpeechKind.Conjunction;
                 case "Междометие":
                 case "Interjection": return WordObject.PartOfSpeechKind.Interjection;
@@ -56,10 +50,8 @@ namespace LinguaTest
             }
         }
 
-        public static string GetPartOfSpeechString(WordObject.PartOfSpeechKind pof)
-        {
-            switch (pof)
-            {
+        public static string GetPartOfSpeechString(WordObject.PartOfSpeechKind pof) {
+            switch (pof) {
                 case WordObject.PartOfSpeechKind.Noun: return "Noun";
                 case WordObject.PartOfSpeechKind.Verb: return "Verb";
                 case WordObject.PartOfSpeechKind.Adjective: return "Adjective";
