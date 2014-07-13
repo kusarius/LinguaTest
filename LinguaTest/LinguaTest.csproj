@@ -79,6 +79,7 @@
       <DependentUpon>ResultForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RichTextBoxPrinter.cs" />
+    <Compile Include="SystemMenu.cs" />
     <Compile Include="TakeTestWindow.cs">
       <SubType>Form</SubType>
     </Compile>

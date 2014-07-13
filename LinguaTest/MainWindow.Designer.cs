@@ -171,9 +171,6 @@
             this.wordsTable.AllowUserToAddRows = false;
             this.wordsTable.AllowUserToDeleteRows = false;
             this.wordsTable.AllowUserToResizeRows = false;
-            this.wordsTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.wordsTable.BackgroundColor = System.Drawing.Color.White;
             this.wordsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.wordsTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -183,8 +180,9 @@
             this.word,
             this.translate,
             this.chast});
+            this.wordsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wordsTable.Enabled = false;
-            this.wordsTable.Location = new System.Drawing.Point(-1, 25);
+            this.wordsTable.Location = new System.Drawing.Point(0, 24);
             this.wordsTable.MultiSelect = false;
             this.wordsTable.Name = "wordsTable";
             this.wordsTable.RowHeadersVisible = false;
@@ -194,7 +192,7 @@
             this.wordsTable.ShowCellToolTips = false;
             this.wordsTable.ShowEditingIcon = false;
             this.wordsTable.ShowRowErrors = false;
-            this.wordsTable.Size = new System.Drawing.Size(631, 391);
+            this.wordsTable.Size = new System.Drawing.Size(629, 393);
             this.wordsTable.TabIndex = 2;
             this.wordsTable.Visible = false;
             // 
