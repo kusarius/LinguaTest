@@ -52,7 +52,8 @@ namespace LinguaTest {
         }
 
         private void UpdateMenu() {
-            menuStrip1.Visible = menuStrip1.Enabled = 
+            menuStrip1.Visible = menuStrip1.Enabled = showMenu;
+            if (wordsTable.Enabled) 
                 label1.Visible = label1.Enabled = showMenu;
         }
 
