@@ -29,26 +29,21 @@ namespace LinguaTest
             UpdateQuestion();
         }
 
-        private void UpdateQuestion()
-        {
-            if (questionNumber == questions.Length)
-            {
+        private void UpdateQuestion() {
+            if (questionNumber == questions.Length) {
                 isDone = true;
                 this.Close();
                 ShowResults();
             }
-            else
-            {
+            else {
                 currentAnswer = new UserAnswer();
                 textBox1.Clear();
                 string question = "", rightAnswer = "";
-                if (rnd.Next(0, 2) == 0)
-                {
+                if (rnd.Next(0, 2) == 0) {
                     question = questions[questionNumber].Word;
                     rightAnswer = questions[questionNumber].Translate;
-                }
-                else
-                {
+                } 
+                else {
                     question = questions[questionNumber].Translate;
                     rightAnswer = questions[questionNumber].Word;
                 }
@@ -60,8 +55,13 @@ namespace LinguaTest
                 currentAnswer.RightAnswer = rightAnswer;
 
                 questionNumber++;
+                tipIndex = 1;
             }
         }
+
+        /*
+         * 
+         * */
 
         private void TakeTestWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
