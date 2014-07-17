@@ -5,7 +5,7 @@
  * 
  * Author: Alexander Ragulin (kusarius@gmail.com)
  * 16.05.2014
- *
+ * 
 */
 
 using System;
@@ -141,11 +141,8 @@ namespace LinguaTest {
         }
 
         private void оПрограммеLinguaTestToolStripMenuItem_Click(object sender, EventArgs e) {
-            MessageBox.Show("LinguaTest 1.1, 25.06.2014\nАвтор: Рагулин Александр (kusarius)\n" +
-                "Баг-репорты, замечания и предложения отправляйте на e-mail:\n" +
-                "     kusarius@gmail.com\n     ragulin.alexander@gmail.com",
-                "О программе LinguaTest", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            AboutWindow aboutWnd = new AboutWindow();
+            aboutWnd.ShowDialog();
         }
     }
 }
