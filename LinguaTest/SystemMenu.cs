@@ -52,9 +52,6 @@ namespace LinguaTest {
 
         private IntPtr m_SysMenu = IntPtr.Zero;    // Handle to the System Menu
 
-        public SystemMenu() {
-        }
-
         // Insert a separator at the given position index starting at zero.
         public bool InsertSeparator(int Pos) {
             return (InsertMenu(Pos, ItemFlags.mfSeparator |

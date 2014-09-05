@@ -55,6 +55,12 @@
     <Compile Include="AboutWindow.Designer.cs">
       <DependentUpon>AboutWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddNewQuestionWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewQuestionWindow.Designer.cs">
+      <DependentUpon>AddNewQuestionWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddNewWordWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,12 @@
     </Compile>
     <Compile Include="CreateOrEditTestWindow.Designer.cs">
       <DependentUpon>CreateOrEditTestWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateOrEditVarTestWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateOrEditVarTestWindow.Designer.cs">
+      <DependentUpon>CreateOrEditVarTestWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="DataGridViewRichTextBoxColumn.cs">
       <SubType>Component</SubType>
@@ -104,11 +116,17 @@
     <EmbeddedResource Include="AboutWindow.resx">
       <DependentUpon>AboutWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AddNewQuestionWindow.resx">
+      <DependentUpon>AddNewQuestionWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddNewWordWindow.resx">
       <DependentUpon>AddNewWordWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateOrEditTestWindow.resx">
       <DependentUpon>CreateOrEditTestWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateOrEditVarTestWindow.resx">
+      <DependentUpon>CreateOrEditVarTestWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
