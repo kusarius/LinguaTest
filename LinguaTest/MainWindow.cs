@@ -66,8 +66,9 @@ namespace LinguaTest {
             Application.Exit();
         }
 
-        private void создатьToolStripMenuItem_Click(object sender, EventArgs e) {
-            CreateOrEditTestWindow w = new CreateOrEditTestWindow();
+        private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SelectKindOfTestWindow w = new SelectKindOfTestWindow();
             w.ShowDialog();
         }
 

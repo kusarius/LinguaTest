@@ -85,6 +85,12 @@
       <DependentUpon>ResultForm.cs</DependentUpon>
     </Compile>
     <Compile Include="RichTextBoxPrinter.cs" />
+    <Compile Include="SelectKindOfTestWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectKindOfTestWindow.Designer.cs">
+      <DependentUpon>SelectKindOfTestWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="SystemMenu.cs" />
     <Compile Include="TakeTestWindow.cs">
       <SubType>Form</SubType>
@@ -119,6 +125,9 @@
     </Compile>
     <EmbeddedResource Include="ResultForm.resx">
       <DependentUpon>ResultForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectKindOfTestWindow.resx">
+      <DependentUpon>SelectKindOfTestWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TakeTestWindow.resx">
       <DependentUpon>TakeTestWindow.cs</DependentUpon>
