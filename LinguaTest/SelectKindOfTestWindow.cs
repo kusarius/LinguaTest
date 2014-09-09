@@ -41,6 +41,8 @@ namespace LinguaTest
             }
             else
             {
+                CreateOrEditVarTestWindow w = new CreateOrEditVarTestWindow();
+                w.ShowDialog();
             }
         }
     }

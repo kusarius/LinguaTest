@@ -15,5 +15,12 @@ namespace LinguaTest
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddNewQuestionWindow w = new AddNewQuestionWindow();
+            w.Text = "Добавить вопрос";
+            w.ShowDialog();
+        }
     }
 }
