@@ -5,7 +5,7 @@ using System.Text;
 
 namespace LinguaTest
 {
-    class QuestionObject
+    public class QuestionObject
     {
         public string FirstQuestionPart { get; set; }
         public string SecondQuestionPart { get; set; }
